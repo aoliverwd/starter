@@ -1,0 +1,22 @@
+name: local-project
+recipe: lemp
+config:
+  php: '8.0'
+  webroot: src
+  database: mariadb
+  config:
+    vhosts: config/nginx.conf
+
+
+proxy:
+  mailhog:
+    - mail.local-project.lndo.site
+
+services:
+  mailhog:
+    type: mailhog
+    hogfrom:
+      - appserver
+  phpmyadmin:
+    type: phpmyadmin
+    hosts: []

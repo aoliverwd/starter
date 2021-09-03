@@ -1,0 +1,9 @@
+# PHPStan finds bugs in your code without writing tests: https://phpstan.org/
+# Run tests via the CLI: vendor/bin/phpstan analyse -c phpstan.neo
+parameters:
+    level: 5
+    paths:
+        - src
+    ignoreErrors:
+        # The below constants are defined when running the application from a web server
+        # - '#Constant DOCUMENT_SETTINGS not found#'
